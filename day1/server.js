@@ -26,22 +26,22 @@ var http = require("http");
 var url = require("url");
 
 function start(route,handle){
-  function onRequest(request, response){
-  	if(request.url!=="/favicon.ico"){//去掉烦人的favicon.ico加载
-  		var pathname = url.parse(request.url).pathname;
-	    console.log("Request for "+ pathname +" received.");
+    function onRequest(request, response){
+      	if(request.url!=="/favicon.ico"){//去掉烦人的favicon.ico加载
+      		var pathname = url.parse(request.url).pathname;
+    	    console.log("Request for "+ pathname +" received.");
 
-	    var content = route(handle,pathname);
+    	    var content = route(handle,pathname);
 
-	    response.writeHead(200,{"Content-Type":"text/plain"});
-	    response.write(content);
-	    response.end();
-  	}
+    	    response.writeHead(200,{"Content-Type":"text/plain"});
+    	    response.write(content);
+    	    response.end();
+      	}
     
   }
 
-  http.createServer(onRequest).listen(8888);
-  console.log("Server has started.");
+    http.createServer(onRequest).listen(8888);
+    console.log("Server has started.");
 }
 
 exports.start = start;
