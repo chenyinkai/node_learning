@@ -1,0 +1,15 @@
+grant all privileges on test.* to 'www'@'%' identified by 'www'; // 增加一个用户：获得 test 数据库的所有权限，用户名是 www， 密码是 www
+
+use test; // 使用 test 数据库
+
+//新建一张 pets 表； 定义各种键名
+create table pets (
+    id varchar(50) not null,
+    name varchar(100) not null,
+    gender bool not null,
+    birth varchar(10) not null,
+    createdAt bigint not null,
+    updatedAt bigint not null,
+    version bigint not null,
+    primary key (id)
+) engine=innodb;
