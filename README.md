@@ -3,12 +3,12 @@ test
 
 ## hello-koa
 
-cd hello-koa
+`cd hello-koa`
 
-npm install
+`npm install`
 
-cd folder
+`cd folder`
 
-node app.js
+`node app.js`
 
-node -v > 7.6.0
+> node -v >= 7.6.0
