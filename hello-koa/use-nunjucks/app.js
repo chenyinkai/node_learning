@@ -1,7 +1,7 @@
 const nunjucks = require('nunjucks');
 
-function createEnv(path, opts) {
-    var
+function createEnv (path, opts) {
+	var
         autoescape = opts.autoescape === undefined ? true : opts.autoescape,
         noCache = opts.noCache || false,
         watch = opts.watch || false,
@@ -14,12 +14,12 @@ function createEnv(path, opts) {
                 autoescape: autoescape,
                 throwOnUndefined: throwOnUndefined
             });
-    if (opts.filters) {
-        for (var f in opts.filters) {
-            env.addFilter(f, opts.filters[f]);
-        }
-    }
-    return env;
+	if (opts.filters) {
+		for (var f in opts.filters) {
+				env.addFilter(f, opts.filters[f]);
+		}
+	}
+	return env;
 }
 
 var env = createEnv('views', {
